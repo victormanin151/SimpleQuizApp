@@ -3,25 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Simple Quiz App</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
-<body style="background-color: black; color: white; font-family: sans-serif;">
+<body>
 <h1>Quiz Questions</h1>
 
-<div th:if="${Quiz != null and #lists.size(Quiz) > 0}">
-    <ul>
-        <li th:each="q : ${Quiz}">
-            <strong th:text="${q.id}"></strong>.
-            <span th:text="${q.title}"></span>
-            <ul>
-                <li>A) <span th:text="${q.optionA}"></span></li>
-                <li>B) <span th:text="${q.optionB}"></span></li>
-                <li>C) <span th:text="${q.optionC}"></span></li>
-                <li>D) <span th:text="${q.optionD}"></span></li>
-            </ul>
-        </li>
-    </ul>
-</div>
+<form th:action="@{/results}" method="post">
+    <div th:each="q : ${Quiz}">
+        <p><strong th:text="${q.id}"></strong>. <span th:text="${q.title}"></span></p>
 
-<p th:if="${Quiz == null or #lists.isEmpty(Quiz)}">No quiz questions available.</p>
+        <input type="radio" th:id="${'q' + q.id + 'A'}" th:name="${'q' + q.id}" th:value="A">
+        <label th:for="${'q' + q.id + 'A'}" th:text="${q.optionA}"></label><br>
+
+        <input type="radio" th:id="${'q' + q.id + 'B'}" th:name="${'q' + q.id}" th:value="B">
+        <label th:for="${'q' + q.id + 'B'}" th:text="${q.optionB}"></label><br>
+
+        <input type="radio" th:id="${'q' + q.id + 'C'}" th:name="${'q' + q.id}" th:value="C">
+        <label th:for="${'q' + q.id + 'C'}" th:text="${q.optionC}"></label><br>
+
+        <input type="radio" th:id="${'q' + q.id + 'D'}" th:name="${'q' + q.id}" th:value="D">
+        <label th:for="${'q' + q.id + 'D'}" th:text="${q.optionD}"></label><br>
+
+        <hr>
+    </div>
+
+    <button type="submit">Submit Quiz</button>
+</form>
 </body>
 </html>

@@ -40,7 +40,7 @@ public class QuizController {
         List<Quiz> questions = service.getAllQuestions();
 
         for (Quiz q : questions) {
-            String selected = answers.get("q" + q.getId()); // get user choice
+            String selected = answers.get("q" + q.getId());
             if (selected != null && selected.equalsIgnoreCase(q.getCorrectAnswer())) {
                 score++;
             }
