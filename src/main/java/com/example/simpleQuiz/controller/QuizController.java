@@ -54,4 +54,18 @@ public class QuizController {
         model.addAttribute("total", questions.size());
         return "results";
     }
+
+    @PostMapping("/addQuestion")
+    public String addQuestion(
+            @RequestParam String title,
+            @RequestParam String optionA,
+            @RequestParam String optionB,
+            @RequestParam String optionC,
+            @RequestParam String optionD,
+            @RequestParam String correctAnswer,
+            @RequestParam String difficulty
+    ){
+        service.addQuestion(title, optionA, optionB, optionC, optionD, correctAnswer, null, difficulty);
+        return "redirect:/";
+    }
 }
