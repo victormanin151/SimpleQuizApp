@@ -12,7 +12,7 @@ public class QuizService {
     private int currId = 1;
 
     public QuizService() {
-        // Add sample questions with separate options
+
         questions.add(new Quiz(currId++,
                 "What is Java?",
                 "Programming Language",
@@ -20,7 +20,8 @@ public class QuizService {
                 "Island",
                 "Car",
                 "A",
-                false));
+                false,
+                "hard"));
 
         questions.add(new Quiz(currId++,
                 "Which planet is known as the Red Planet?",
@@ -29,7 +30,8 @@ public class QuizService {
                 "Venus",
                 "Jupiter",
                 "B",
-                false));
+                false,
+                "easy"));
     }
 
     public List<Quiz> getAllQuestions() {

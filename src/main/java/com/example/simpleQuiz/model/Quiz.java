@@ -9,12 +9,13 @@ public class Quiz {
     private String optionD;
     private String correctAnswer;
     private boolean isAnswered;
+    private String questionDifficulty;
 
 
     public Quiz(){
     }
 
-    public Quiz(int id, String title, String optionA, String optionB, String optionC, String optionD, String correctAnswer, boolean isAnswered){
+    public Quiz(int id, String title, String optionA, String optionB, String optionC, String optionD, String correctAnswer, boolean isAnswered, String questionDifficulty){
         this.id = id;
         this.title = title;
         this.optionA = optionA;
@@ -23,6 +24,15 @@ public class Quiz {
         this.optionD = optionD;
         this.correctAnswer = correctAnswer;
         this.isAnswered = isAnswered;
+        this.questionDifficulty = questionDifficulty;
+    }
+
+    public String getQuestionDifficulty() {
+        return questionDifficulty;
+    }
+
+    public void setQuestionDifficulty(String questionDifficulty) {
+        this.questionDifficulty = questionDifficulty;
     }
 
     public String getOptionA() {
