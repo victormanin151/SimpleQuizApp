@@ -8,14 +8,14 @@ public class Quiz {
     private String optionC;
     private String optionD;
     private String correctAnswer;
-    private boolean isAnswered;
+    private String userAnswer;
     private String questionDifficulty;
 
 
     public Quiz(){
     }
 
-    public Quiz(int id, String title, String optionA, String optionB, String optionC, String optionD, String correctAnswer, boolean isAnswered, String questionDifficulty){
+    public Quiz(int id, String title, String optionA, String optionB, String optionC, String optionD, String correctAnswer, String userAnswer, String questionDifficulty){
         this.id = id;
         this.title = title;
         this.optionA = optionA;
@@ -23,7 +23,7 @@ public class Quiz {
         this.optionC = optionC;
         this.optionD = optionD;
         this.correctAnswer = correctAnswer;
-        this.isAnswered = isAnswered;
+        this.userAnswer = userAnswer;
         this.questionDifficulty = questionDifficulty;
     }
 
@@ -83,12 +83,12 @@ public class Quiz {
         this.title = title;
     }
 
-    public boolean isAnswered() {
-        return isAnswered;
+    public String getUserAnswer() {
+        return userAnswer;
     }
 
-    public void setAnswered(boolean answered) {
-        isAnswered = answered;
+    public void setUserAnswer(String userAnswer) {
+        this.userAnswer = userAnswer;
     }
 
     public String getCorrectAnswer() {

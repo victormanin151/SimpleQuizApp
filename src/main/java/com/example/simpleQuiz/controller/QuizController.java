@@ -21,16 +21,20 @@ public class QuizController {
     public QuizController(QuizService service) {
         this.service = service;
     }
-    @GetMapping("/start")
+    @GetMapping("/")
     public String start(){
+        return "index";
+    }
+
+    @GetMapping("/start")
+    public String index(Model model){
+        model.addAttribute("Quiz", service.getAllQuestions());
         return "start";
     }
 
-
-    @GetMapping("/")
-    public String index(Model model){
-        model.addAttribute("Quiz", service.getAllQuestions());
-        return "index";
+    @GetMapping("/addQuestion")
+    public String addQuestion(){
+        return "addQuestion";
     }
 
     @PostMapping("/results")

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Quiz Question</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<h1>Add a New Quiz Question</h1>
+
+<form th:action="@{/addQuestion}" method="post">
+
+    <label for="title">Question Title:</label><br>
+    <input type="text" id="title" name="title" required><br><br>
+
+    <label for="optionA">Option A:</label><br>
+    <input type="text" id="optionA" name="optionA" required><br><br>
+
+    <label for="optionB">Option B:</label><br>
+    <input type="text" id="optionB" name="optionB" required><br><br>
+
+    <label for="optionC">Option C:</label><br>
+    <input type="text" id="optionC" name="optionC" required><br><br>
+
+    <label for="optionD">Option D:</label><br>
+    <input type="text" id="optionD" name="optionD" required><br><br>
+
+    <p>Correct Answer:</p>
+    <input type="radio" id="correctA" name="correctAnswer" value="A" required>
+    <label for="correctA">A</label>
+
+    <input type="radio" id="correctB" name="correctAnswer" value="B">
+    <label for="correctB">B</label>
+
+    <input type="radio" id="correctC" name="correctAnswer" value="C">
+    <label for="correctC">C</label>
+
+    <input type="radio" id="correctD" name="correctAnswer" value="D">
+    <label for="correctD">D</label>
+    <br><br>
+
+    <p>Difficulty:</p>
+    <input type="radio" id="easy" name="difficulty" value="easy" required>
+    <label for="easy">Easy</label>
+
+    <input type="radio" id="medium" name="difficulty" value="medium">
+    <label for="medium">Medium</label>
+
+    <input type="radio" id="hard" name="difficulty" value="hard">
+    <label for="hard">Hard</label>
+    <br><br>
+
+    <button type="submit">Add Question</button>
+</form>
+
+<a th:href="@{/}" class="button">Back to Quiz</a>
+</body>
+</html>

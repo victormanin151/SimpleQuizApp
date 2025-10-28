@@ -20,7 +20,7 @@ public class QuizService {
                 "Island",
                 "Car",
                 "A",
-                false,
+                "",
                 "hard"));
 
         questions.add(new Quiz(currId++,
@@ -30,12 +30,17 @@ public class QuizService {
                 "Venus",
                 "Jupiter",
                 "B",
-                false,
+                "",
                 "easy"));
     }
 
     public List<Quiz> getAllQuestions() {
         return questions;
+    }
+
+    public void addQuestion(String title, String optionA, String optionB, String optionC, String optionD, String correctAnswer,String userAnswer, String questionDifficulty){
+        Quiz newQuiz = new Quiz(currId++, title, optionA, optionB, optionC, optionD, correctAnswer, userAnswer, questionDifficulty);
+        questions.add(newQuiz);
     }
 
 
