@@ -8,7 +8,15 @@
 <body>
 <h1>Quiz Results</h1>
 
-<p>You scored <span th:text="${score}"></span> out of <span th:text="${total}"></span>!</p>
+<p>You answered <span th:text="${score}"></span> out of <span th:text="${total}"></span> right!</p>
+
+<p>
+    <span th:if="${score == total}">Excellent!</span>
+    <span th:if="${score >= 0.9 * total and score < total}">Well done!</span>
+    <span th:if="${score >= 0.75 * total and score < 0.9 * total}">Good!</span>
+    <span th:if="${score >= 0.5 * total and score < 0.75 * total}">Pass!</span>
+    <span th:if="${score < 0.5 * total}">Failed!</span>
+</p>
 
 <a th:href="@{/}">Try Again</a>
 </body>
