@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Quiz App</title>
+</head>
+<body style="background-color: black; color: white; font-family: sans-serif;">
+<h1>Quiz Questions</h1>
+
+<div th:if="${Quiz != null and #lists.size(Quiz) > 0}">
+    <ul>
+        <li th:each="q : ${Quiz}">
+            <strong th:text="${q.id}"></strong>.
+            <span th:text="${q.title}"></span>
+            <ul>
+                <li>A) <span th:text="${q.optionA}"></span></li>
+                <li>B) <span th:text="${q.optionB}"></span></li>
+                <li>C) <span th:text="${q.optionC}"></span></li>
+                <li>D) <span th:text="${q.optionD}"></span></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<p th:if="${Quiz == null or #lists.isEmpty(Quiz)}">No quiz questions available.</p>
+</body>
+</html>
