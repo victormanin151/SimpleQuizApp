@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Quiz App</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<h1>Quiz Questions</h1>
+
+<form th:action="@{/results}" method="post">
+    <div th:each="q : ${Quiz}">
+        <p><strong th:text="${q.id}"></strong>. <span th:text="${q.title}"></span></p>
+
+        <input type="radio" th:id="${'q' + q.id + 'A'}" th:name="${'q' + q.id}" th:value="A"
+               th:checked="${q.userAnswer == 'A'}">
+        <label th:for="${'q' + q.id + 'A'}" th:text="${q.optionA}"></label><br>
+
+        <input type="radio" th:id="${'q' + q.id + 'B'}" th:name="${'q' + q.id}" th:value="B"
+               th:checked="${q.userAnswer == 'B'}">
+        <label th:for="${'q' + q.id + 'B'}" th:text="${q.optionB}"></label><br>
+
+        <input type="radio" th:id="${'q' + q.id + 'C'}" th:name="${'q' + q.id}" th:value="C"
+               th:checked="${q.userAnswer == 'C'}">
+        <label th:for="${'q' + q.id + 'C'}" th:text="${q.optionC}"></label><br>
+
+        <input type="radio" th:id="${'q' + q.id + 'D'}" th:name="${'q' + q.id}" th:value="D"
+               th:checked="${q.userAnswer == 'D'}">
+        <label th:for="${'q' + q.id + 'D'}" th:text="${q.optionD}"></label><br>
+
+        <hr>
+    </div>
+
+    <button type="submit">Submit Quiz</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz Results</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<h1>Quiz Results</h1>
+
+<p>You scored <span th:text="${score}"></span> out of <span th:text="${total}"></span>!</p>
+
+<a th:href="@{/}">Try Again</a>
+</body>
+</html>
