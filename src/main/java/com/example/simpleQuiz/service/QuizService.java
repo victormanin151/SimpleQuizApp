@@ -132,10 +132,10 @@ public class QuizService {
                 "",
                 "hard"));
     }
-
     public List<Quiz> getAllQuestions() {
-        Collections.shuffle(questions);
-        return questions;
+        List<Quiz> shuffled = new ArrayList<>(questions);
+        Collections.shuffle(shuffled);
+        return shuffled;
     }
 
     public void addQuestion(String title, String optionA, String optionB, String optionC, String optionD, String correctAnswer,String userAnswer, String questionDifficulty){
