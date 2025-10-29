@@ -8,9 +8,12 @@
 <body>
 <h1>Welcome to the Quiz!</h1>
 <p>Click the button below to start.</p>
-<a th:href="@{/start}" class="button">Start Quiz with All Questions</a>
 
 <a th:href="@{/quiz(index=0)}" class="button">Start Quiz 1 by 1</a>
+<p>
+    <a th:href="@{/start}" class="button">Start Quiz with All Questions</a>
+</p>
+
 
 <p>Or add a new question.</p>
 <a th:href="@{/addQuestion}" class="button">Add a new Question</a>

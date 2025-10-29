@@ -73,7 +73,16 @@ public class QuizController {
             @RequestParam String correctAnswer,
             @RequestParam String difficulty
     ){
-        service.addQuestion(title, optionA, optionB, optionC, optionD, correctAnswer, null, difficulty);
+        String correctText;
+        switch (correctAnswer) {
+            case "A" -> correctText = optionA;
+            case "B" -> correctText = optionB;
+            case "C" -> correctText = optionC;
+            case "D" -> correctText = optionD;
+            default -> correctText = "";
+        }
+
+        service.addQuestion(title, optionA, optionB, optionC, optionD, correctText, null, difficulty);
         return "redirect:/";
     }
 
