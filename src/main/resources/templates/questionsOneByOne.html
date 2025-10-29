@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz Question</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<h1>Quiz</h1>
+
+<form th:action="@{/quiz}" method="post">
+    <p><strong th:text="${question.id}"></strong>. <span th:text="${question.title}"></span></p>
+
+    <input type="hidden" name="index" th:value="${index}" />
+    <input type="hidden" name="questionId" th:value="${question.id}" />
+
+    <input type="radio" th:id="'A'" name="answer" th:value="${question.optionA}" th:checked="${question.userAnswer == question.optionA}">
+    <label th:for="'A'" th:text="${question.optionA}"></label><br>
+
+    <input type="radio" th:id="'B'" name="answer" th:value="${question.optionB}" th:checked="${question.userAnswer == question.optionB}">
+    <label th:for="'B'" th:text="${question.optionB}"></label><br>
+
+    <input type="radio" th:id="'C'" name="answer" th:value="${question.optionC}" th:checked="${question.userAnswer == question.optionC}">
+    <label th:for="'C'" th:text="${question.optionC}"></label><br>
+
+    <input type="radio" th:id="'D'" name="answer" th:value="${question.optionD}" th:checked="${question.userAnswer == question.optionD}">
+    <label th:for="'D'" th:text="${question.optionD}"></label><br><br>
+
+    <button type="submit" name="action" value="prev" th:if="${index > 0}">Previous</button>
+    <button type="submit" name="action" value="next" th:text="${index + 1 == #lists.size(session.shuffledQuestions) ? 'Finish Quiz' : 'Next'}"></button>
+</form>
+</body>
+</html>
