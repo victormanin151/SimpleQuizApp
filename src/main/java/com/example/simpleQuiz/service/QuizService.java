@@ -152,5 +152,11 @@ public class QuizService {
         return null;
     }
 
+    public Quiz getQuestionByIndex(List<Quiz> shuffled, int index) {
+        if(index >= 0 && index < shuffled.size()) {
+            return shuffled.get(index);
+        }
+        return null;
+    }
 
 }
