@@ -1,0 +1,56 @@
+[
+  {
+    "title": "What is the longest river in the world?",
+    "optionA": "Amazon River",
+    "optionB": "Nile River",
+    "optionC": "Yangtze River",
+    "optionD": "Mississippi River",
+    "correctAnswer": "Amazon River",
+    "difficulty": "medium"
+  },
+  {
+    "title": "Which country is known as the Land of the Rising Sun?",
+    "optionA": "South Korea",
+    "optionB": "Japan",
+    "optionC": "China",
+    "optionD": "Thailand",
+    "correctAnswer": "Japan",
+    "difficulty": "easy"
+  },
+  {
+    "title": "What is the smallest country in the world?",
+    "optionA": "Monaco",
+    "optionB": "Vatican City",
+    "optionC": "San Marino",
+    "optionD": "Liechtenstein",
+    "correctAnswer": "Vatican City",
+    "difficulty": "easy"
+  },
+  {
+    "title": "What is the largest species of shark?",
+    "optionA": "Great White Shark",
+    "optionB": "Hammerhead Shark",
+    "optionC": "Whale Shark",
+    "optionD": "Tiger Shark",
+    "correctAnswer": "Whale Shark",
+    "difficulty": "medium"
+  },
+  {
+    "title": "What gas do plants absorb from the atmosphere for photosynthesis?",
+    "optionA": "Oxygen",
+    "optionB": "Hydrogen",
+    "optionC": "Carbon Dioxide",
+    "optionD": "Nitrogen",
+    "correctAnswer": "Carbon Dioxide",
+    "difficulty": "easy"
+  },
+  {
+    "title": "What is the name of the first artificial satellite sent into space?",
+    "optionA": "Apollo 11",
+    "optionB": "Sputnik 1",
+    "optionC": "Vostok 1",
+    "optionD": "Hubble",
+    "correctAnswer": "Sputnik 1",
+    "difficulty": "hard"
+  }
+]

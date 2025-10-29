@@ -1,11 +1,17 @@
 package com.example.simpleQuiz.service;
 
 import com.example.simpleQuiz.model.Quiz;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Service;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class QuizService {
@@ -157,6 +163,37 @@ public class QuizService {
             return shuffled.get(index);
         }
         return null;
+    }
+
+    public void loadQuestionsFromJson(String path) {
+        ObjectMapper mapper = new ObjectMapper();
+        try {
+            List<Map<String, String>> jsonQuestions = mapper.readValue(
+                    new File(path),
+                    new TypeReference<List<Map<String, String>>>() {}
+            );
+
+            for (Map<String, String> q : jsonQuestions) {
+                addQuestion(
+                        q.get("title"),
+                        q.get("optionA"),
+                        q.get("optionB"),
+                        q.get("optionC"),
+                        q.get("optionD"),
+                        q.get("correctAnswer"),
+                        null,
+                        q.get("difficulty")
+                );
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @PostConstruct
+    public void init() {
+        loadQuestionsFromJson("src/main/resources/files/questions.json");
     }
 
 }
