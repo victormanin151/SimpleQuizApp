@@ -9,7 +9,7 @@
 <h1>Quiz</h1>
 
 <form th:action="@{/quiz}" method="post">
-    <p><strong th:text="${question.id}"></strong>. <span th:text="${question.title}"></span></p>
+    <p><strong th:text="${index + 1}"></strong>. <span th:text="${question.title}"></span></p>
 
     <input type="hidden" name="index" th:value="${index}" />
     <input type="hidden" name="questionId" th:value="${question.id}" />
