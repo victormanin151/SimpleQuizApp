@@ -25,18 +25,14 @@
     <input type="hidden" name="index" th:value="${index}" />
     <input type="hidden" name="questionId" th:value="${question.id}" />
 
-    <div class="radio-option">
-        <input type="radio" th:id="'A'" name="answer" th:value="${question.optionA}" th:checked="${question.userAnswer == question.optionA}">
-        <label th:for="'A'" th:text="${question.optionA}"></label>
-    </div>
+    <input type="radio" th:id="'A'" name="answer" th:value="${question.optionA}" th:checked="${question.userAnswer == question.optionA}">
+    <label th:for="'A'" th:text="${question.optionA}"></label><br><br>
 
-    <div class="radio-option">
-        <input type="radio" th:id="'B'" name="answer" th:value="${question.optionB}" th:checked="${question.userAnswer == question.optionB}">
-        <label th:for="'B'" th:text="${question.optionB}"></label>
-    </div>
+    <input type="radio" th:id="'B'" name="answer" th:value="${question.optionB}" th:checked="${question.userAnswer == question.optionB}">
+    <label th:for="'B'" th:text="${question.optionB}"></label><br><br>
 
     <input type="radio" th:id="'C'" name="answer" th:value="${question.optionC}" th:checked="${question.userAnswer == question.optionC}">
-    <label th:for="'C'" th:text="${question.optionC}"></label><br>
+    <label th:for="'C'" th:text="${question.optionC}"></label><br><br>
 
     <input type="radio" th:id="'D'" name="answer" th:value="${question.optionD}" th:checked="${question.userAnswer == question.optionD}">
     <label th:for="'D'" th:text="${question.optionD}"></label><br><br>

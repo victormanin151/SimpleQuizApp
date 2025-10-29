@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fa;
+    color: #333;
+    margin: 0;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.button, button {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+    margin-bottom: 15px;
+    margin-right: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover, button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+.button:active, button:active {
+    background-color: #1c598f;
+}
+
+a {
+    text-decoration: none;
+}
+
+#progress {
+    font-size: 1.1rem;
+    color: #34495e;
+    margin-bottom: 20px;
+}
+
+#timer-container {
+    font-size: 1.2rem;
+    color: #e67e22;
+    margin-bottom: 25px;
+}
+
+form p {
+    font-size: 1.1rem;
+    color: #34495e;
+    margin-bottom: 15px;
+}
+.radio-option {
+    margin-bo
