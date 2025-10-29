@@ -110,7 +110,7 @@ public class QuizService {
                 "Leonardo da Vinci",
                 "Pablo Picasso",
                 "Michelangelo",
-                "B",
+                "Leonardo da Vinci",
                 "",
                 "medium"));
         questions.add(new Quiz(currId++,
@@ -119,7 +119,7 @@ public class QuizService {
                 "5",
                 "7",
                 "11",
-                "7",
+                "5",
                 "",
                 "hard"));
         questions.add(new Quiz(currId++,

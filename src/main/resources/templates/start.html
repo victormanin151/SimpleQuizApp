@@ -12,20 +12,32 @@
     <div th:each="q : ${Quiz}">
         <p><strong th:text="${q.id}"></strong>. <span th:text="${q.title}"></span></p>
 
-        <input type="radio" th:id="${'q' + q.id + 'A'}" th:name="${'q' + q.id}" th:value="A"
-               th:checked="${q.userAnswer == 'A'}">
+        <input type="radio"
+               th:id="${'q' + q.id + 'A'}"
+               th:name="${'q' + q.id}"
+               th:value="${q.optionA}"
+               th:checked="${q.userAnswer == q.optionA}">
         <label th:for="${'q' + q.id + 'A'}" th:text="${q.optionA}"></label><br>
 
-        <input type="radio" th:id="${'q' + q.id + 'B'}" th:name="${'q' + q.id}" th:value="B"
-               th:checked="${q.userAnswer == 'B'}">
+        <input type="radio"
+               th:id="${'q' + q.id + 'B'}"
+               th:name="${'q' + q.id}"
+               th:value="${q.optionB}"
+               th:checked="${q.userAnswer == q.optionB}">
         <label th:for="${'q' + q.id + 'B'}" th:text="${q.optionB}"></label><br>
 
-        <input type="radio" th:id="${'q' + q.id + 'C'}" th:name="${'q' + q.id}" th:value="C"
-               th:checked="${q.userAnswer == 'C'}">
+        <input type="radio"
+               th:id="${'q' + q.id + 'C'}"
+               th:name="${'q' + q.id}"
+               th:value="${q.optionC}"
+               th:checked="${q.userAnswer == q.optionC}">
         <label th:for="${'q' + q.id + 'C'}" th:text="${q.optionC}"></label><br>
 
-        <input type="radio" th:id="${'q' + q.id + 'D'}" th:name="${'q' + q.id}" th:value="D"
-               th:checked="${q.userAnswer == 'D'}">
+        <input type="radio"
+               th:id="${'q' + q.id + 'D'}"
+               th:name="${'q' + q.id}"
+               th:value="${q.optionD}"
+               th:checked="${q.userAnswer == q.optionD}">
         <label th:for="${'q' + q.id + 'D'}" th:text="${q.optionD}"></label><br>
 
         <hr>
