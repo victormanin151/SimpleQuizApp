@@ -8,6 +8,10 @@
 <body>
 <h1>Quiz</h1>
 
+<div id="timer-container">
+    Time left: <span id="timer">60</span> seconds
+</div>
+
 <form th:action="@{/quiz}" method="post">
     <p><strong th:text="${index + 1}"></strong>. <span th:text="${question.title}"></span></p>
 
@@ -29,5 +33,19 @@
     <button type="submit" name="action" value="prev" th:if="${index > 0}">Previous</button>
     <button type="submit" name="action" value="next" th:text="${index + 1 == #lists.size(session.shuffledQuestions) ? 'Finish Quiz' : 'Next'}"></button>
 </form>
+<script>
+    let timeLeft = 60;
+    const timerDisplay = document.getElementById("timer");
+
+    const countdown = setInterval(() => {
+        timeLeft--;
+        timerDisplay.textContent = timeLeft;
+
+        if (timeLeft <= 0) {
+            clearInterval(countdown);
+            window.location.href = "/results";
+        }
+    }, 1000);
+</script>
 </body>
 </html>
