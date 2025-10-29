@@ -4,6 +4,7 @@ import com.example.simpleQuiz.model.Quiz;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -19,7 +20,7 @@ public class QuizService {
                 "Coffee",
                 "Island",
                 "Car",
-                "A",
+                "Programming Language",
                 "",
                 "hard"));
 
@@ -29,7 +30,7 @@ public class QuizService {
                 "Mars",
                 "Venus",
                 "Jupiter",
-                "B",
+                "Mars",
                 "",
                 "easy"));
 
@@ -39,7 +40,7 @@ public class QuizService {
                 "Indian Ocean",
                 "Arctic Ocean",
                 "Pacific Ocean",
-                "D",
+                "Pacific Ocean",
                 "",
                 "easy"));
 
@@ -49,7 +50,7 @@ public class QuizService {
                 "Mark Twain",
                 "Charles Dickens",
                 "Jane Austen",
-                "A",
+                "William Shakespeare",
                 "",
                 "medium"));
 
@@ -59,7 +60,7 @@ public class QuizService {
                 "Oxygen",
                 "Gold",
                 "Iron",
-                "B",
+                "Oxygen",
                 "",
                 "easy"));
 
@@ -69,7 +70,7 @@ public class QuizService {
                 "Kyoto",
                 "Osaka",
                 "Hiroshima",
-                "A",
+                "Tokyo",
                 "",
                 "easy"));
 
@@ -79,7 +80,7 @@ public class QuizService {
                 "Saturn",
                 "Jupiter",
                 "Neptune",
-                "C",
+                "Jupiter",
                 "",
                 "medium"));
 
@@ -89,7 +90,7 @@ public class QuizService {
                 "12",
                 "14",
                 "16",
-                "B",
+                "12",
                 "",
                 "easy"));
 
@@ -99,7 +100,7 @@ public class QuizService {
                 "Portuguese",
                 "French",
                 "English",
-                "B",
+                "Portuguese",
                 "",
                 "easy"));
 
@@ -118,7 +119,7 @@ public class QuizService {
                 "5",
                 "7",
                 "11",
-                "C",
+                "7",
                 "",
                 "hard"));
         questions.add(new Quiz(currId++,
@@ -127,12 +128,13 @@ public class QuizService {
                 "Yes very late",
                 "Should have started yesterday",
                 "Already failed Alen",
-                "D",
+                "Already failed Alen",
                 "",
                 "hard"));
     }
 
     public List<Quiz> getAllQuestions() {
+        Collections.shuffle(questions);
         return questions;
     }
 
@@ -140,5 +142,15 @@ public class QuizService {
         Quiz newQuiz = new Quiz(currId++, title, optionA, optionB, optionC, optionD, correctAnswer, userAnswer, questionDifficulty);
         questions.add(newQuiz);
     }
+
+    public Quiz getQuestionById(int id) {
+        for (Quiz q : questions){
+            if(q.getId() == id){
+                return q;
+            }
+        }
+        return null;
+    }
+
 
 }

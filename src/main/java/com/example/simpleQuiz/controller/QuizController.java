@@ -32,6 +32,12 @@ public class QuizController {
         return "start";
     }
 
+//    @GetMapping("/quiz"){
+//        public String questionsOneByOne(){
+//            return "questionsOneByOne";
+//        }
+//    }
+
     @GetMapping("/addQuestion")
     public String addQuestion(){
         return "addQuestion";
