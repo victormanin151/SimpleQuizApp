@@ -3,10 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Quiz Question</title>
-    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/style.css}">
 </head>
 <body>
 <h1>Quiz</h1>
+
+<div id="progress">
+    Question <span th:text="${index + 1}"></span> of
+    <span th:text="${#lists.size(session.shuffledQuestions)}"></span>
+</div>
+
+<p></p>
 
 <div id="timer-container">
     Time left: <span id="timer">60</span> seconds
@@ -18,11 +25,15 @@
     <input type="hidden" name="index" th:value="${index}" />
     <input type="hidden" name="questionId" th:value="${question.id}" />
 
-    <input type="radio" th:id="'A'" name="answer" th:value="${question.optionA}" th:checked="${question.userAnswer == question.optionA}">
-    <label th:for="'A'" th:text="${question.optionA}"></label><br>
+    <div class="radio-option">
+        <input type="radio" th:id="'A'" name="answer" th:value="${question.optionA}" th:checked="${question.userAnswer == question.optionA}">
+        <label th:for="'A'" th:text="${question.optionA}"></label>
+    </div>
 
-    <input type="radio" th:id="'B'" name="answer" th:value="${question.optionB}" th:checked="${question.userAnswer == question.optionB}">
-    <label th:for="'B'" th:text="${question.optionB}"></label><br>
+    <div class="radio-option">
+        <input type="radio" th:id="'B'" name="answer" th:value="${question.optionB}" th:checked="${question.userAnswer == question.optionB}">
+        <label th:for="'B'" th:text="${question.optionB}"></label>
+    </div>
 
     <input type="radio" th:id="'C'" name="answer" th:value="${question.optionC}" th:checked="${question.userAnswer == question.optionC}">
     <label th:for="'C'" th:text="${question.optionC}"></label><br>
